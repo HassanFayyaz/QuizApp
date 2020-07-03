@@ -1,0 +1,61 @@
+.container{
+    width: 80%;
+    margin-left: 10%;
+    padding: 5%;
+    background-color: rgb(213, 217, 223);
+    height: 400px;
+    margin-top: -20px;
+    
+}
+.nz-col{
+    padding: 10%;
+}
+.Correct{
+    border: 6px solid rgb(4, 0, 255);
+    width : 20%;
+    text-align: center;
+    margin-left: 10%;
+    border-radius: 4px;
+}
+.Wrong{
+    border: 6px solid rgb(158, 0, 0);
+    width : 20%;
+    text-align: center;
+    margin-left: 10%;
+    border-radius: 4px;
+
+}
+.NextQuestion{
+    border: 6px solid rgb(86, 77, 219);;
+    width : 20%;
+    text-align: center;
+    margin-left: 10%;
+    border-radius: 4px;
+
+}
+
+
+[nz-button] {
+    width: 20%;
+    padding: 40 px;
+    margin: 10px;
+    text-align: center;
+    margin-bottom: 4px;
+    border-radius: 4px;
+    vertical-align: middle;
+    
+  }
+  [nz-button]:hover {
+    width: 20%;
+    padding: 40 px;
+    margin: 10px;
+    text-align: center;
+    margin-bottom: 4px;
+    border-radius: 4px;
+    vertical-align: middle;
+    background-color: black;
+    color:whitesmoke;
+    
+  }
+
+

@@ -1,0 +1,11 @@
+<div class="container">
+    <h3 style="margin-left: 1%;">
+        <b>Score :</b> {{correctPercentage}}%
+    </h3>
+    <h3 style="margin-left: 1%;">
+        <b>Max Score :</b> {{probabilityOfMaxPercentage}}%
+    </h3>
+    <nz-progress [nzPercent]="correctPercentage"></nz-progress>
+    <nz-progress [nzPercent]="probabilityOfMaxPercentage"></nz-progress>
+    <nz-progress [nzPercent]="probabilityOfMinPercentage"></nz-progress>
+</div>

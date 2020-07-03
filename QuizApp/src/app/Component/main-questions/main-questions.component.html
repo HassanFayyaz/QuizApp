@@ -1,0 +1,49 @@
+<div class ="container">
+    <div class = "Question">Question {{i+1}} of {{questions.length}}</div>
+    <span  nz-typography nzType="secondary" class="category">{{questions[i].category}}</span>
+    <br>
+    
+    <i nz-icon *ngIf="!easy" nzType="star" nzTheme="outline"></i>
+    <i nz-icon *ngIf="easy" nzType="star" nzTheme="fill"></i>
+    <i nz-icon *ngIf="!medium" nzType="star" nzTheme="outline"></i>
+    <i nz-icon *ngIf="medium" nzType="star" nzTheme="fill"></i>
+    <i nz-icon *ngIf="!hard" nzType="star" nzTheme="outline"></i>
+    <i nz-icon *ngIf="hard" nzType="star" nzTheme="fill"></i>
+
+
+    <div><h3>{{questions[i].question}}</h3></div>
+    <div nz-row>
+        <div nz-col nzSpan="10">
+
+            <button nz-button nzType="default" *ngIf="!CorrectAnswer"  (click)="answerCorrect()" ><b>{{questions[i].correct_answer}}</b></button>
+            <button nz-button style="background-color: rgb(32, 184, 2); color: whitesmoke;" *ngIf="CorrectAnswer" [disabled] ="true" nzType="default" ><b>{{questions[i].correct_answer}}</b></button>
+            <button nz-button *ngIf = "!showRedButtonOne" [disabled]="WrongAnswerOne" (click)="answerIncorrect('0')" nzType="default"><b>{{questions[i].incorrect_answers[0]}}</b></button>
+            <button nz-button *ngIf = "showRedButtonOne" style="background-color: rgb(233, 37, 37); color:whitesmoke ;" [disabled]="WrongAnswerOne" (click)="answerIncorrect('0')" nzType="default"><b>{{questions[i].incorrect_answers[0]}}</b></button>
+
+        </div>
+        <div nz-col nzSpan="10" nzOffset="4">
+            <button nz-button *ngIf="!showRedButtonTwo" [disabled]="WrongAnswerTwo" (click)="answerIncorrect('1')" nzType="default"><b>{{questions[i].incorrect_answers[1]}}</b></button>
+            <button nz-button *ngIf="showRedButtonTwo" style="background-color: rgb(233, 37, 37); color:whitesmoke;" [disabled]="WrongAnswerTwo" (click)="answerIncorrect('1')" nzType="default"><b>{{questions[i].incorrect_answers[1]}}</b></button>
+            <button nz-button *ngIf="!showRedButtonThree" [disabled]="WrongAnswerThree" (click)="answerIncorrect('2')" nzType="default"><b>{{questions[i].incorrect_answers[2]}}</b></button>
+            <button nz-button *ngIf="showRedButtonThree" style="background-color: rgb(233, 37, 37); color:whitesmoke;" [disabled]="WrongAnswerThree" (click)="answerIncorrect('2')" nzType="default"><b>{{questions[i].incorrect_answers[2]}}</b></button>
+
+        </div>
+
+    </div>
+    <br>
+    <div nz-row>
+        <div *ngIf="CorrectAnswerDiv" style="background-color: rgb(4, 0, 255); color: whitesmoke;" class= "Correct">
+           <b>Correct!</b> 
+        </div>
+        <br>
+        <div *ngIf="WrongAnswerDiv" style="background-color: rgb(158, 0, 0); color: whitesmoke;" class= "Wrong">
+            <b>Sorry!</b>
+        </div>
+        <br>
+        <div *ngIf="NextQuestionDiv" (click)="nextQuestion()" style="background-color: rgb(86, 77, 219); color: whitesmoke;" class="NextQuestion">
+           <b>Next Question!</b> 
+        </div>
+
+    </div>
+
+</div>
